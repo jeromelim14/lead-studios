@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Funnel Challenge - Lead Studios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            margin-bottom: 30px;
+            color: #f87171;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #d1d5db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight {
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        .underline {
+            text-decoration: underline;
+            text-decoration-color: #ef4444;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #9ca3af;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            background: #ef4444;
+            color: white;
+            padding: 16px 48px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .cta-button:hover {
+            background: #dc2626;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .guarantee {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            margin-top: 15px;
+        }
+
+        .content-section {
+            padding: 60px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .content-text {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .highlight-box h4 {
+            color: #ef4444;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            color: #ffffff;
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .feature-number {
+            width: 48px;
+            height: 48px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .feature-description {
+            color: #d1d5db;
+        }
+
+        .guarantee-section {
+            background: linear-gradient(to right, rgba(127, 29, 29, 0.3), rgba(154, 52, 18, 0.2));
+            border: 1px solid rgba(185, 28, 28, 0.5);
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .guarantee-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .guarantee-text {
+            font-size: 1.25rem;
+            color: #f3f4f6;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #ef4444;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #d1d5db;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .final-cta h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .final-cta p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                gap: 30px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guarantee-section {
+                padding: 30px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="badge">🎯 14-Day Challenge</div>
+            <h1>
+                We'll Beat Your Best Converting Ad by
+                <span class="highlight">10%+</span> in
+                <span class="underline">14 Days</span>, Guaranteed.
+            </h1>
+            <p class="subtitle">For High-Ticket Service Providers, Coaches & Agency Owners Who Want More Booked Appointments</p>
+            <p class="description">We'll install a high-converting Sales Letter that pre-qualifies prospects and shortens your sales cycle—guaranteed to improve your cost per appointment by 10%+ or full refund.</p>
+
+            <a href="https://calendly.com/jerome-leadstudios/call" target="_blank" class="cta-button">
+                Accept the Challenge - Book Call
+            </a>
+            <div class="guarantee">🎯 10%+ improvement guaranteed • 14-day timeline • Full refund if we don't deliver</div>
+        </div>
+
+        <!-- Challenge Details -->
+        <div class="content-section">
+            <h2 class="section-title">The Challenge</h2>
+            <p class="content-text">You're spending money on ads. They're working. But you know they could work better.</p>
+            <p class="content-text">The problem isn't your targeting. It's not your budget. It's what happens after someone clicks.</p>
+
+            <div class="highlight-box">
+                <h4>Here's Our Bold Claim:</h4>
+                <p>We'll take your best performing ad and improve your cost per appointment by at least 10% in just 14 days using our proven sales letter framework—or you get your money back.</p>
+            </div>
+        </div>
+
+        <!-- How We Do It -->
+        <div class="content-section">
+            <h2 class="section-title">How We Beat Your Best Ad</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <h3 class="feature-title">Pre-Qualification</h3>
+                    <p class="feature-description">Our sales letters filter out tire-kickers before they book, meaning every appointment is with a qualified prospect.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <h3 class="feature-title">Sales Cycle Compression</h3>
+                    <p class="feature-description">Prospects arrive pre-sold on your value proposition, cutting your average sales call time and increasing close rates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <h3 class="feature-title">Proven Framework</h3>
+                    <p class="feature-description">We use the exact same sales letter framework that's generated millions in revenue for high-ticket service providers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee-section">
+            <h2 class="guarantee-title">Iron-Clad Guarantee</h2>
+            <p class="guarantee-text">If we don't improve your cost per appointment by at least 10% within 14 days, you get every penny back. No questions asked.</p>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">10%+</span>
+                    <div class="stat-label">Improvement Guaranteed</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">14</span>
+                    <div class="stat-label">Days Maximum</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Money Back</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Ready to Beat Your Best Ad?</h2>
+            <p>Every day you wait is money left on the table.</p>
+            <p>Book your call now and let's prove we can beat your best converting ad.</p>
+            <br>
+            <a href="https://calendly.com/jerome-leadstudios/call" target="_blank" class="cta-button">
+                Accept the Challenge - Book Call Now
+            </a>
+        </div>
+    </div>
+</body>
+</html>

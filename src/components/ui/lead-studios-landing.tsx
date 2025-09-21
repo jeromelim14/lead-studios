@@ -15,18 +15,29 @@ export function LeadStudiosLanding() {
             <div className="text-2xl font-light text-white">
               Lead Studios
             </div>
-            <LiquidButton 
-              className="px-6 py-2 text-sm font-bold h-10" 
-              borderWidth="2px" 
-              style={{fontFamily: 'Inter, sans-serif'}}
-              onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).Calendly) {
-                  (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/jerome-leadstudios/call'});
-                }
-              }}
-            >
-              Book a Call
-            </LiquidButton>
+            <div className="flex items-center space-x-4">
+              <button
+                className="text-white hover:text-red-400 transition-colors text-sm font-medium"
+                style={{fontFamily: 'Inter, sans-serif'}}
+                onClick={() => {
+                  window.open('/challenge.html', '_blank');
+                }}
+              >
+                Sales Funnel Challenge
+              </button>
+              <LiquidButton
+                className="px-6 py-2 text-sm font-bold h-10"
+                borderWidth="2px"
+                style={{fontFamily: 'Inter, sans-serif'}}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).Calendly) {
+                    (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/jerome-leadstudios/call'});
+                  }
+                }}
+              >
+                Book a Call
+              </LiquidButton>
+            </div>
           </div>
         </div>
       </nav>
