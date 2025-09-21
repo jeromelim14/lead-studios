@@ -11,6 +11,7 @@ interface NavItem {
   name: string
   url: string
   icon: LucideIcon
+  external?: boolean
 }
 
 interface NavBarProps {
@@ -52,6 +53,41 @@ export function NavBar({ items, className }: NavBarProps) {
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
+
+          if (item.external) {
+            return (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setActiveTab(item.name)}
+                className={cn(
+                  "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                  "text-white hover:text-white hover:bg-gray-900",
+                  isActive && "bg-gray-800/50 text-white",
+                )}
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                <span className="hidden md:inline">{item.name}</span>
+                <span className="md:hidden">
+                  <Icon size={18} strokeWidth={2.5} />
+                </span>
+                {isActive && (
+                  <motion.div
+                    layoutId="lamp"
+                    className="absolute inset-0 w-full bg-white/10 rounded-full -z-10"
+                    initial={false}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                    }}
+                  />
+                )}
+              </a>
+            )
+          }
 
           return (
             <Link
