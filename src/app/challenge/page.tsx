@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 export default function ChallengePage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -41,9 +40,8 @@ export default function ChallengePage() {
             <div className="text-2xl font-light text-white">
               Lead Studios
             </div>
-            <LiquidButton
-              className="px-6 py-2 text-sm font-bold h-10"
-              borderWidth="2px"
+            <button
+              className="px-6 py-2 text-sm font-bold h-10 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
               style={{fontFamily: 'Inter, sans-serif'}}
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).Calendly) {
@@ -52,7 +50,7 @@ export default function ChallengePage() {
               }}
             >
               Accept Challenge
-            </LiquidButton>
+            </button>
           </div>
         </div>
       </nav>
@@ -82,9 +80,8 @@ export default function ChallengePage() {
 
           {/* CTA Button */}
           <div className="pt-8">
-            <LiquidButton
-              className="px-12 py-6 text-lg font-bold h-16"
-              borderWidth="2px"
+            <button
+              className="px-12 py-6 text-lg font-bold h-16 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all hover:scale-105 shadow-lg"
               style={{fontFamily: 'Inter, sans-serif'}}
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).Calendly) {
@@ -93,7 +90,7 @@ export default function ChallengePage() {
               }}
             >
               Accept the Challenge - Book Call
-            </LiquidButton>
+            </button>
 
             <p className="text-xs text-gray-500 font-['Inter'] mt-4">
               🎯 10%+ improvement guaranteed • 14-day timeline • Full refund if we don't deliver
@@ -199,9 +196,8 @@ export default function ChallengePage() {
             </div>
 
             <div className="pt-4">
-              <LiquidButton
-                className="px-12 py-6 text-lg font-bold h-16"
-                borderWidth="2px"
+              <button
+                className="px-12 py-6 text-lg font-bold h-16 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all hover:scale-105 shadow-lg"
                 style={{fontFamily: 'Inter, sans-serif'}}
                 onClick={() => {
                   if (typeof window !== 'undefined' && (window as any).Calendly) {
@@ -210,7 +206,7 @@ export default function ChallengePage() {
                 }}
               >
                 Accept the Challenge - Book Call Now
-              </LiquidButton>
+              </button>
             </div>
           </section>
         </div>
