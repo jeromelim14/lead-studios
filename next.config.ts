@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Removed 'output: export' to enable dynamic routing
   trailingSlash: true,
   images: {
     domains: ['images.unsplash.com'],
