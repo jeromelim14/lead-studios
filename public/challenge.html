@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Funnel Challenge - Lead Studios</title>
+    <!-- Calendly widget -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <style>
         * {
             margin: 0;
@@ -281,9 +283,9 @@
             <p class="subtitle">For High-Ticket Service Providers, Coaches & Agency Owners Who Want More Booked Appointments</p>
             <p class="description">We'll install a high-converting Sales Letter that pre-qualifies prospects and shortens your sales cycle—guaranteed to improve your cost per appointment by 10%+ or full refund.</p>
 
-            <a href="https://calendly.com/jerome-leadstudios/call" target="_blank" class="cta-button">
+            <button class="cta-button" onclick="openCalendly()">
                 Accept the Challenge - Book Call
-            </a>
+            </button>
             <div class="guarantee">🎯 10%+ improvement guaranteed • 14-day timeline • Full refund if we don't deliver</div>
         </div>
 
@@ -347,10 +349,20 @@
             <p>Every day you wait is money left on the table.</p>
             <p>Book your call now and let's prove we can beat your best converting ad.</p>
             <br>
-            <a href="https://calendly.com/jerome-leadstudios/call" target="_blank" class="cta-button">
+            <button class="cta-button" onclick="openCalendly()">
                 Accept the Challenge - Book Call Now
-            </a>
+            </button>
         </div>
     </div>
+
+    <script>
+        function openCalendly() {
+            if (window.Calendly) {
+                window.Calendly.initPopupWidget({url: 'https://calendly.com/jerome-leadstudios/call'});
+            } else {
+                window.open('https://calendly.com/jerome-leadstudios/call', '_blank');
+            }
+        }
+    </script>
 </body>
 </html>

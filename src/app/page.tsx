@@ -17,7 +17,7 @@ export default function Home() {
                 className="text-white hover:text-red-400 transition-colors text-sm font-medium"
                 style={{fontFamily: 'Inter, sans-serif'}}
                 onClick={() => {
-                  window.open('/challenge', '_blank');
+                  window.open('/challenge.html', '_blank');
                 }}
               >
                 Sales Funnel Challenge
